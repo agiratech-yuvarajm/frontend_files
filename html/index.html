@@ -1,0 +1,40 @@
+<html>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<script>
+var xhr = new XMLHttpRequest();
+xhr.open('GET', "http://localhost:3000/api/v1/products", true);
+xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+xhr.setRequestHeader('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+xhr.setRequestHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+xhr.send();
+
+xhr.onreadystatechange = processRequest;
+
+function processRequest(e) {
+  if (xhr.readyState == 4 && xhr.status == 200) {
+    var response = JSON.parse(xhr.responseText);
+    console.log(response);
+  }
+}
+
+var xhr = new XMLHttpRequest();
+xhr.open('PUT', "http://localhost:3000/api/v1/products", true);
+xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+xhr.setRequestHeader('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+xhr.setRequestHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+xhr.send();
+
+xhr.onreadystatechange = processRequest;
+
+function processRequest(e) {
+  if (xhr.readyState == 4 && xhr.status == 200) {
+    var response = JSON.parse(xhr.responseText);
+    console.log(response);
+  }
+}
+</script>
+<body>
+Test
+</body>
+</html>

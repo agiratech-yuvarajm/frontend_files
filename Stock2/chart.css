@@ -1,0 +1,50 @@
+<html>
+<head>
+<script type= "text/javascript">
+window.onload = function () {
+    var chart = new canvasJS.chart("chartContainer",
+    {
+   theme: "theme1", //theme1
+   title:{
+     text: "Candle stic chart",
+     fontFamily: "times new roman"
+   },
+   animationEnable: false,  // change to true
+   zoomEnabled: true;
+   exportEnabled: true;
+   axisY: {
+     includeZero:false,
+     title: "Prices",
+     prefix: "$"
+   },
+   axisX: {
+     interval:2,
+     invervalType: "month",
+     valueFormatString: "MMM-YY",
+     lableAngle: -45
+   },
+   data: [
+      type: "candlestick",
+      raisingColor: "green",
+      color: "red",
+      dataPoints: [
+            {x: new Data(2019,10,09),y:[2303,2335,2285,2293]},
+            {x: new Data(2019,10,08),y:[1010,1035,1020,1025]},
+      ]
+
+    }
+
+   ]
+ });
+ chart.render();
+}
+</script>
+<script type="text/javascript"
+src="https://canvasjs.com/assets/script/canvasjs.min.js">
+</script>
+</head>
+<body>
+<div id="charContainer"  style="height:300 px; width: 100%;">
+</div>
+</body>
+</html>
